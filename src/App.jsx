@@ -1,16 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Organization from "./pages/Organization.jsx";
-import Login from "./pages/Login.jsx";
-import Register from "./pages/Register.jsx";
-import Home from "./pages/Home.jsx";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import Organization from "./pages/Organization";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Organization />} />
+        {/* ENTRY POINT */}
+        <Route path="/" element={<Navigate to="/Home" replace />} />
+
+        {/* FLOW */}
+        <Route path="/organization" element={<Organization />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
+
+        {/* DASHBOARD */}
         <Route path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>
