@@ -8,21 +8,55 @@ import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
+
+  const RequireOrganization = ({ children }) => {
+    const orgCreated = localStorage.getItem("organizationCreated")
+
+    if (orgCreated !== "true") {
+      return <Navigate to="/organization" replace />
+    }
+
+    return children
+  }
+
   return (
     <BrowserRouter>
       <Routes>
-        {/* ENTRY POINT */}
-        <Route path="/" element={<Navigate to="/Home" replace />} />
 
-        {/* FLOW */}
+        {/* ENTRY */}
+        <Route path="/" element={<Navigate to="/home" replace />} />
+
+        {/* PUBLIC PAGE */}
+        <Route path="/home" element={<Home />} />
+
+        {/* ORGANIZATION SETUP */}
         <Route path="/organization" element={<Organization />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/about" element={<About />} />
+
+        {/* LOGIN (Protected) */}
+        <Route 
+          path="/login" 
+          element={
+            <RequireOrganization>
+              <Login />
+            </RequireOrganization>
+          } 
+        />
+
+        {/* REGISTER (Protected) */}
+        <Route 
+          path="/register" 
+          element={
+            <RequireOrganization>
+              <Register />
+            </RequireOrganization>
+          } 
+        />
 
         {/* DASHBOARD */}
-        <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route path="/about" element={<About />} />
+
       </Routes>
     </BrowserRouter>
   );

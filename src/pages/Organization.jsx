@@ -71,14 +71,13 @@ export default function Organization() {
     e.preventDefault()
     if (!orgName.trim()) return setError('Organization name is required.')
     if (!industry) return setError('Please select your industry.')
-
     setError('')
     setLoading(true)
     await new Promise(r => setTimeout(r, 1800))
+    localStorage.setItem("organizationCreated", "true")
     setLoading(false)
     navigate('/login')
   }
-
   const v = (p) => phase >= p
   const px = (mouseX - 0.5) * 14
   const py = (mouseY - 0.5) * 8

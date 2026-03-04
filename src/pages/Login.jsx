@@ -18,6 +18,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [focusedField, setFocusedField] = useState(null)
+  const [checkedOrg, setCheckedOrg] = useState(false)
   const [mouseX, setMouseX] = useState(0.5)
   const [mouseY, setMouseY] = useState(0.5)
 
@@ -50,6 +51,14 @@ export default function Login() {
       cancelAnimationFrame(rafRef.current)
     }
   }, [])
+  useEffect(() => {
+    const orgCreated = localStorage.getItem("organizationCreated")
+    if (orgCreated !== "true") {
+      navigate("/organization")
+    } else {
+      setCheckedOrg(true)
+    }
+  }, [navigate])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -67,6 +76,7 @@ export default function Login() {
   const v = (p) => phase >= p
   const px = (mouseX - 0.5) * 22
   const py = (mouseY - 0.5) * 12
+  if (!checkedOrg) return null;
 
   return (
     <>
