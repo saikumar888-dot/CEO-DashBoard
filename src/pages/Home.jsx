@@ -70,7 +70,6 @@ export default function Home() {
           <div className="nav-links">
             <button className="nav-link" onClick={()=>navigate('/about')}>About</button>
             <button className="nav-link" onClick={() => navigate('/organization')}>Organization</button>
-            <button className="nav-link">Pricing</button>
           </div>
           <div className="nav-actions">
             <button className="nbtn nbtn-ghost" onClick={()=>navigate('/login')}>Sign In</button>

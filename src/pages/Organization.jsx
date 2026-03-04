@@ -225,57 +225,7 @@ export default function Organization() {
                     )}
                   </div>
                 </div>
-
-                <div className="op-field">
-                  <label className="op-label">Your Title</label>
-                  <div className="op-input-wrap">
-                    <div className={`op-input-icon ${focusedField==='role'?'active':''}`}>
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <circle cx="7" cy="4.5" r="2.8" stroke="currentColor" strokeWidth="1.2"/>
-                        <path d="M1.5 12.5C1.5 10.015 4.01 8 7 8s5.5 2.015 5.5 4.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-                      </svg>
-                    </div>
-                    <input className={`op-input ${error&&!role?'err':''}`}
-                      type="text" placeholder="CEO / Founder"
-                      value={role} onChange={e=>setRole(e.target.value)}
-                      onFocus={()=>setFocusedField('role')} onBlur={()=>setFocusedField(null)}/>
-                  </div>
-                </div>
               </div>
-
-              {/* Organization size */}
-              <div className="op-field">
-                <label className="op-label">Organization Size <span className="op-opt">employees</span></label>
-                <div className="op-size-grid">
-                  {SIZES.map(s=>(
-                    <div key={s.v}
-                      className={`op-size-btn ${size===s.v?'active':''}`}
-                      onClick={()=>setSize(s.v)}>
-                      <div className="op-size-n">{s.l}</div>
-                      <div className="op-size-s">{s.sub}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Website */}
-              <div className="op-field">
-                <label className="op-label">Website <span className="op-opt">optional</span></label>
-                <div className="op-input-wrap">
-                  <div className={`op-input-icon ${focusedField==='web'?'active':''}`}>
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/>
-                      <path d="M7 1.5C7 1.5 9 4 9 7s-2 5.5-2 5.5M7 1.5C7 1.5 5 4 5 7s2 5.5 2 5.5M1.5 7h11" stroke="currentColor" strokeWidth="1.1"/>
-                    </svg>
-                  </div>
-                  <input className="op-input"
-                    type="url" placeholder="https://meridian.com"
-                    value={website} onChange={e=>setWebsite(e.target.value)}
-                    onFocus={()=>setFocusedField('web')} onBlur={()=>setFocusedField(null)}
-                    autoComplete="url"/>
-                </div>
-              </div>
-
               {/* Error */}
               {error && (
                 <div className="op-error">
