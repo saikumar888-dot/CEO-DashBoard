@@ -455,6 +455,21 @@
   overflow: hidden;
   margin-top: 4px;
 }
+.db-logout-btn{
+margin-top:10px;
+width:100%;
+padding:8px;
+background:#e05252;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:13px;
+}
+
+.db-logout-btn:hover{
+background:#c63b3b;
+}
 .db-budget-bar {
   height: 100%; border-radius: 2px;
   transition: width 0.5s ease;

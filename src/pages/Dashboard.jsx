@@ -5,6 +5,7 @@ import {
   PieChart, Pie, Cell, Legend
 } from 'recharts'
 import "../styles/Dashboard.css";
+import { useNavigate } from "react-router-dom"
 
 
 /* ──────────────────────────────────────────────────────────
@@ -113,6 +114,7 @@ const CashTip = ({ active, payload, label }) => {
 
 /* ─────────────────────────────────────────────────────────── */
 export default function Dashboard() {
+  const navigate = useNavigate()
   const [period, setPeriod] = useState('Monthly')
   const [activeNav, setActiveNav] = useState('overview')
   const [now, setNow] = useState(new Date())
@@ -121,6 +123,11 @@ export default function Dashboard() {
     const t = setInterval(() => setNow(new Date()), 60000)
     return () => clearInterval(t)
   }, [])
+  const handleLogout = () => {
+    localStorage.removeItem("organizationCreated")
+    navigate("/home")
+  }
+
 
   const kpi = kpiData[period]
 
@@ -177,16 +184,16 @@ export default function Dashboard() {
           ))}
         </nav>
 
-        <div className="db-sidebar-bottom">
-          <div className="db-user-row">
+      <div className="db-sidebar-bottom">
+        <div className="db-user-row">
             <div className="db-avatar-sm">RC</div>
             <div>
               <div className="db-user-name">Richard Chen</div>
               <div className="db-user-role">Chief Executive</div>
             </div>
-            <div className="db-user-chevron">›</div>
           </div>
-        </div>
+        <button className="db-logout-btn" onClick={handleLogout}>Logout</button>
+      </div>
       </aside>
 
       {/* ── MAIN ── */}
