@@ -65,7 +65,7 @@ export default function Home() {
 
         <nav className={`nav ${v(1)?'in':''}`}>
           <div className="nav-brand">
-            <div className="brand-mark">A</div>RevenueRadar
+            <div className="brand-mark">R</div>RevenueRadar
           </div>
           <div className="nav-links">
             <button className="nav-link" onClick={()=>navigate('/about')}>About</button>

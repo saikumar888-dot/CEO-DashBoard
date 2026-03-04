@@ -100,7 +100,7 @@ export default function Register() {
           <div className="rp-orb rp-orb-1"/><div className="rp-orb rp-orb-2"/>
 
           <div className={`rp-brand ${v(1)?'in':''}`} onClick={()=>navigate('/')}>
-            <div className="rp-brand-mark">A</div>
+            <div className="rp-brand-mark">R</div>
             <div className="rp-brand-name">RevenueRadar</div>
           </div>
 

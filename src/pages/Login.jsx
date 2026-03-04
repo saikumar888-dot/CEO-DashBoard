@@ -86,7 +86,7 @@ export default function Login() {
 
           {/* Brand */}
           <div className={`lp-brand ${v(1)?'in':''}`} onClick={()=>navigate('/')}>
-            <div className="lp-brand-mark">A</div>
+            <div className="lp-brand-mark">R</div>
             <div className="lp-brand-name">RevenueRadar</div>
           </div>
 
@@ -157,27 +157,6 @@ export default function Login() {
               </h1>
               <p className="lp-card-sub">Sign in to your dashboard and resume where you left off.</p>
             </div>
-
-            {/* SSO */}
-            <div className="lp-sso">
-              <button className="sso-btn">
-                <svg className="sso-icon" viewBox="0 0 20 20" fill="none">
-                  <path d="M19.6 10.23c0-.68-.06-1.36-.18-2.02H10v3.83h5.39c-.23 1.23-.94 2.27-2 2.97v2.47h3.24c1.9-1.75 2.97-4.33 2.97-7.25z" fill="#4285F4"/>
-                  <path d="M10 20c2.7 0 4.97-.9 6.63-2.42l-3.24-2.47c-.9.6-2.05.96-3.39.96-2.6 0-4.8-1.76-5.59-4.12H1.07v2.55C2.72 17.74 6.11 20 10 20z" fill="#34A853"/>
-                  <path d="M4.41 11.95A5.97 5.97 0 0 1 4.09 10c0-.68.12-1.34.32-1.95V5.5H1.07A10 10 0 0 0 0 10c0 1.61.38 3.14 1.07 4.5l3.34-2.55z" fill="#FBBC05"/>
-                  <path d="M10 3.98c1.47 0 2.79.5 3.83 1.5L16.69 2.4C14.96.9 12.7 0 10 0 6.11 0 2.72 2.26 1.07 5.5l3.34 2.55C5.2 5.7 7.4 3.98 10 3.98z" fill="#EA4335"/>
-                </svg>
-                Google
-              </button>
-              <button className="sso-btn">
-                <svg className="sso-icon" viewBox="0 0 20 20" fill="none">
-                  <rect width="20" height="20" rx="4" fill="#0078D4"/>
-                  <path d="M9.5 3.5H4a.5.5 0 0 0-.5.5v5.5H9.5V3.5zM9.5 10.5H3.5V16a.5.5 0 0 0 .5.5h5.5v-6zM10.5 3.5V9.5H16.5V4a.5.5 0 0 0-.5-.5h-5.5zM10.5 10.5v6H16a.5.5 0 0 0 .5-.5v-5.5h-6z" fill="#fff"/>
-                </svg>
-                Microsoft
-              </button>
-            </div>
-
             {/* Divider */}
             <div className="lp-div">
               <div className="lp-div-line"/>

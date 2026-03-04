@@ -27,9 +27,7 @@ export default function Organization() {
   const [phase, setPhase] = useState(0)
   const [orgName, setOrgName] = useState('')
   const [industry, setIndustry] = useState('')
-  const [size, setSize] = useState('')
   const [website, setWebsite] = useState('')
-  const [role, setRole] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [focusedField, setFocusedField] = useState(null)
@@ -73,8 +71,7 @@ export default function Organization() {
     e.preventDefault()
     if (!orgName.trim()) return setError('Organization name is required.')
     if (!industry) return setError('Please select your industry.')
-    if (!size) return setError('Please select your organization size.')
-    if (!role.trim()) return setError('Please enter your job title.')
+
     setError('')
     setLoading(true)
     await new Promise(r => setTimeout(r, 1800))
@@ -97,7 +94,7 @@ export default function Organization() {
           <div className="op-orb op-orb-1"/><div className="op-orb op-orb-2"/>
 
           <div className={`op-brand ${v(1)?'in':''}`} onClick={()=>navigate('/')}>
-            <div className="op-brand-mark">A</div>
+            <div className="op-brand-mark">R</div>
             <div className="op-brand-name">RevenueRadar</div>
           </div>
 
